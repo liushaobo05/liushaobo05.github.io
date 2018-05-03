@@ -229,6 +229,286 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/git代码回滚/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="暮雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="心之忧矣，如匪浣衣。静言思之，不能奋飞">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/git代码回滚/" itemprop="url">git代码回滚</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T18:30:53+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="场景1"><a href="#场景1" class="headerlink" title="场景1"></a>场景1</h4><blockquote>
+<p>糟了，我刚把不想要的代码，commit到本地仓库中了，但是还没有做push操作！</p>
+</blockquote>
+<ul>
+<li><p>文件修改未执行git add操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git checkout fileName</span><br><span class="line">$git checkout .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同时对多个文件执行了git add操作，但本次只想提交其中一部分文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git add *</span><br><span class="line">$ git status</span><br><span class="line"># 取消暂存</span><br><span class="line">$ git reset HEAD &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件执行了git add操作，但想撤销对其的修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 取消暂存</span><br><span class="line">git reset HEAD fileName</span><br><span class="line"># 撤销修改</span><br><span class="line">git checkout fileName</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改的文件已被git commit，但想再次修改不再产生新的Commit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 修改最后一次提交</span><br><span class="line">$ git add sample.txt</span><br><span class="line">$ git commit --amend -m&quot;说明&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>已在本地进行了多次git commit操作，现在想撤销到其中某次Commit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset [--hard|soft|mixed|merge|keep] [commit|HEAD]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="场景2"><a href="#场景2" class="headerlink" title="场景2"></a>场景2</h4><blockquote>
+<p>彻底完了，刚线上更新的代码出现问题了，需要还原这次提交的代码！</p>
+</blockquote>
+<p><strong>注意：</strong><br>已进行git push，即已推送到“远程仓库”中。我们将已被提交到“远程仓库”的代码还原操作叫做“回滚”！注意：对远程仓库做回滚操作是有风险的，需提前做好备份和通知其他团队成员！</p>
+<ul>
+<li><p>通过tag发布</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git checkout &lt;tag&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>回到当前的分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git checkout &lt;branch_name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>撤销指定文件到指定版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查看指定文件的历史版本</span><br><span class="line">git log &lt;filename&gt;</span><br><span class="line"># 回滚到指定commitID</span><br><span class="line">git checkout &lt;commitID&gt; &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除最后一次远程提交</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 方式一：使用revert</span><br><span class="line">$git revert HEAD</span><br><span class="line">$git push origin master</span><br><span class="line"></span><br><span class="line"># 方式二：使用reset</span><br><span class="line">$git reset --hard HEAD^</span><br><span class="line">$git push origin master -f</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>二者区别：</strong><br>revert是放弃指定提交的修改，但是会生成一次新的提交，需要填写提交注释，以前的历史记录都在；<br>reset是指将HEAD指针指到指定提交，历史记录中不会出现放弃的提交记录。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/Linux下命令集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="暮雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="心之忧矣，如匪浣衣。静言思之，不能奋飞">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/Linux下命令集/" itemprop="url">Linux下命令集</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T18:20:38+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>linux命令行作为开发运维一项必备的技能，熟练的使用命令行工具，可以提高日常开发效率和分析排错的能力。此文档主要为平时常使用的一些命令集合整理，方便自己查阅。</p>
+<h4 id="git相关的"><a href="#git相关的" class="headerlink" title="git相关的"></a>git相关的</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 打包增量代码</span><br><span class="line">$git archive --format=tar.gz --output ~/www-csrf.tar.gz HEAD $(git diff 66fa65b6499f860d88a7e69698454deddcbd5db6 a6f8faadf9dfce35edd044b76baba2ad91adc3ec --name-only)</span><br></pre></td></tr></table></figure>
+<h4 id="网络排错"><a href="#网络排错" class="headerlink" title="网络排错"></a>网络排错</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查看端口使用情况</span><br><span class="line">$netstat -tunpl</span><br><span class="line"></span><br><span class="line"># 网络链接状态检查</span><br><span class="line">$nc ip port</span><br></pre></td></tr></table></figure>
+<h4 id="系统处理"><a href="#系统处理" class="headerlink" title="系统处理"></a>系统处理</h4><h4 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/谈谈前后端分离的认识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1318,147 +1598,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/go学习笔记1－知识点导图/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="暮雨">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="心之忧矣，如匪浣衣。静言思之，不能奋飞">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/23/go学习笔记1－知识点导图/" itemprop="url">go学习笔记1－知识点导图</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T21:58:31+08:00">
-                2018-04-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="go语言总览"><a href="#go语言总览" class="headerlink" title="go语言总览"></a>go语言总览</h3><p><strong>知识体系</strong><br><img src="http://ok0uwamt8.bkt.clouddn.com/go%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.png" alt="image"></p>
-<blockquote>
-<p>go是由goole出品的编程语言，在并发处理上了使用了一种新的理念,不同于java的多线程实现并发，也不同于node.js基于事件的方式通过异步回调的机制。它使用在学术上被称为CSP模型，通过协程的方式实现并发编程。在语言特点上，它是一种强类型的语言，语法简单，易于上手，执行效率高效。</p>
-</blockquote>
-<p>本系列将按照以上的知识体系图进行展开</p>
-<h4 id="1-语言的安装，运行环境"><a href="#1-语言的安装，运行环境" class="headerlink" title="1. 语言的安装，运行环境"></a>1. 语言的安装，运行环境</h4><p>将介绍mac环境下go安装,语言执行环境介绍，go语言内置相关命令</p>
-<h4 id="2-使用sublime-test3搭建开发环境"><a href="#2-使用sublime-test3搭建开发环境" class="headerlink" title="2. 使用sublime test3搭建开发环境"></a>2. 使用sublime test3搭建开发环境</h4><p>以sublime text3作为开发工具，搭建go开发环境</p>
-<h4 id="3-基本数据类型"><a href="#3-基本数据类型" class="headerlink" title="3. 基本数据类型"></a>3. 基本数据类型</h4><p>go语言的基本数据类型, 整形，浮点型，字符串，数组登进行展开</p>
-<h4 id="4-切片"><a href="#4-切片" class="headerlink" title="4. 切片"></a>4. 切片</h4><p>go语言中一种特有的数据类型，可以理解为变长数组</p>
-<h4 id="5-map"><a href="#5-map" class="headerlink" title="5. map"></a>5. map</h4><p>map在其他语言体系中，我们称为hash table 或字典型,</p>
-<h4 id="6-控制结构"><a href="#6-控制结构" class="headerlink" title="6. 控制结构"></a>6. 控制结构</h4><p>任何一种编程语言都实现有两种控制结构，判断和循环，那么go语言是怎样实现的？有什么不同，在该篇内容进行展开</p>
-<h4 id="7-函数"><a href="#7-函数" class="headerlink" title="7. 函数"></a>7. 函数</h4><p>函数是go语言编程的一个重要概念,在go中，我们将函数看作一种数据类型，在go中，通过关键字var，type, func声明的，都可以被称为一种类型</p>
-<h4 id="8-结构和方法"><a href="#8-结构和方法" class="headerlink" title="8. 结构和方法"></a>8. 结构和方法</h4><p>这篇内容主要用来实现面向对象编程的，go语言的面向对象编程在语法上要比较简单</p>
-<h4 id="9-包管理"><a href="#9-包管理" class="headerlink" title="9. 包管理"></a>9. 包管理</h4><p>包管理是实现模块化编程的重要体现，go的模块化管理又有其特有的特色</p>
-<h4 id="10-接口和反射"><a href="#10-接口和反射" class="headerlink" title="10. 接口和反射"></a>10. 接口和反射</h4><p>接口是约定的一种规约，实现了接口方法的实例就是该接口的实例。</p>
-<h4 id="11-错误处理"><a href="#11-错误处理" class="headerlink" title="11. 错误处理"></a>11. 错误处理</h4><p>go语言没有try/catch的异常处理方式，它实现了另一种机制defer-panic-and-recover</p>
-<h4 id="12-goroutine和channel"><a href="#12-goroutine和channel" class="headerlink" title="12. goroutine和channel"></a>12. goroutine和channel</h4><p>该篇内容是整个体系的重中之中，也是go语言的一大特色,通过通信方式进行变量共享，而非共享变量进行通信</p>
-<h4 id="13-基于共享变量的并发编程"><a href="#13-基于共享变量的并发编程" class="headerlink" title="13. 基于共享变量的并发编程"></a>13. 基于共享变量的并发编程</h4><p>go同样实现了java共享变量的多线程编程,在该篇中将进行展开</p>
-<h4 id="14-实战实现一个docker客户端"><a href="#14-实战实现一个docker客户端" class="headerlink" title="14. 实战实现一个docker客户端"></a>14. 实战实现一个docker客户端</h4><p>通过一个实战项目实现docker的客户端，实现一个业务分发的简单编程框架</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1502,7 +1648,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

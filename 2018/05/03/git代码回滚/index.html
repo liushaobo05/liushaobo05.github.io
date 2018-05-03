@@ -79,21 +79,17 @@
 
 
 
-<meta name="description" content="当你面试的时候，无法绕开的一个话题就是，前端开发和后端开发更甚全栈开发。这是职业上的划分，那么前端，后端怎么在项目上进行界定的。这个针对不同的项目，表现不同的形式。简单的说，前端偏于页面展示，后端则重于业务数据处理。 分工的发生早期的系统架构，主要是C/S，服务端进行业务处理，客户端通过网络链接和server端进行通信，客户端主要用于数据的展示，服务端则进行业务数据的处理，clinet端和serv">
+<meta name="description" content="场景1 糟了，我刚把不想要的代码，commit到本地仓库中了，但是还没有做push操作！   文件修改未执行git add操作 12$git checkout fileName$git checkout .  同时对多个文件执行了git add操作，但本次只想提交其中一部分文件 1234$ git add *$ git status# 取消暂存$ git reset HEAD &amp;lt;filena">
 <meta property="og:type" content="article">
-<meta property="og:title" content="谈谈前后端分离的认识">
-<meta property="og:url" content="http://yoursite.com/2018/05/03/谈谈前后端分离的认识/index.html">
+<meta property="og:title" content="git代码回滚">
+<meta property="og:url" content="http://yoursite.com/2018/05/03/git代码回滚/index.html">
 <meta property="og:site_name" content="心之忧矣，如匪浣衣。静言思之，不能奋飞">
-<meta property="og:description" content="当你面试的时候，无法绕开的一个话题就是，前端开发和后端开发更甚全栈开发。这是职业上的划分，那么前端，后端怎么在项目上进行界定的。这个针对不同的项目，表现不同的形式。简单的说，前端偏于页面展示，后端则重于业务数据处理。 分工的发生早期的系统架构，主要是C/S，服务端进行业务处理，客户端通过网络链接和server端进行通信，客户端主要用于数据的展示，服务端则进行业务数据的处理，clinet端和serv">
+<meta property="og:description" content="场景1 糟了，我刚把不想要的代码，commit到本地仓库中了，但是还没有做push操作！   文件修改未执行git add操作 12$git checkout fileName$git checkout .  同时对多个文件执行了git add操作，但本次只想提交其中一部分文件 1234$ git add *$ git status# 取消暂存$ git reset HEAD &amp;lt;filena">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img.alicdn.com/tps/TB1yMyNPVXXXXaPaXXXXXXXXXXX-555-263.png">
-<meta property="og:image" content="https://img.alicdn.com/tps/TB10.2tPVXXXXbUXXXXXXXXXXXX-590-611.png">
-<meta property="og:image" content="https://img.alicdn.com/tps/TB1q2iWPVXXXXX6XVXXXXXXXXXX-800-521.jpg">
-<meta property="og:updated_time" content="2018-05-03T10:07:41.000Z">
+<meta property="og:updated_time" content="2018-05-03T10:46:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="谈谈前后端分离的认识">
-<meta name="twitter:description" content="当你面试的时候，无法绕开的一个话题就是，前端开发和后端开发更甚全栈开发。这是职业上的划分，那么前端，后端怎么在项目上进行界定的。这个针对不同的项目，表现不同的形式。简单的说，前端偏于页面展示，后端则重于业务数据处理。 分工的发生早期的系统架构，主要是C/S，服务端进行业务处理，客户端通过网络链接和server端进行通信，客户端主要用于数据的展示，服务端则进行业务数据的处理，clinet端和serv">
-<meta name="twitter:image" content="https://img.alicdn.com/tps/TB1yMyNPVXXXXaPaXXXXXXXXXXX-555-263.png">
+<meta name="twitter:title" content="git代码回滚">
+<meta name="twitter:description" content="场景1 糟了，我刚把不想要的代码，commit到本地仓库中了，但是还没有做push操作！   文件修改未执行git add操作 12$git checkout fileName$git checkout .  同时对多个文件执行了git add操作，但本次只想提交其中一部分文件 1234$ git add *$ git status# 取消暂存$ git reset HEAD &amp;lt;filena">
 
 
 
@@ -123,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/03/谈谈前后端分离的认识/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/03/git代码回滚/"/>
 
 
 
 
 
-  <title>谈谈前后端分离的认识 | 心之忧矣，如匪浣衣。静言思之，不能奋飞</title>
+  <title>git代码回滚 | 心之忧矣，如匪浣衣。静言思之，不能奋飞</title>
   
 
 
@@ -236,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/谈谈前后端分离的认识/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/git代码回滚/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="暮雨">
@@ -253,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">谈谈前后端分离的认识</h1>
+          <h1 class="post-title" itemprop="name headline">git代码回滚</h1>
         
 
         <div class="post-meta">
@@ -265,7 +261,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T16:46:11+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T18:30:53+08:00">
                 2018-05-03
               </time>
             
@@ -303,13 +299,45 @@
       
 
       
-        <p>当你面试的时候，无法绕开的一个话题就是，前端开发和后端开发更甚全栈开发。这是职业上的划分，那么前端，后端怎么在项目上进行界定的。这个针对不同的项目，表现不同的形式。<br>简单的说，前端偏于页面展示，后端则重于业务数据处理。</p>
-<h4 id="分工的发生"><a href="#分工的发生" class="headerlink" title="分工的发生"></a>分工的发生</h4><p>早期的系统架构，主要是C/S，服务端进行业务处理，客户端通过网络链接和server端进行通信，客户端主要用于数据的展示，服务端则进行业务数据的处理，clinet端和server都使用的是同一种编程语言，client端也是一种运行于服务器上的程序，所以采用同服务端程序相同的处理语言。<br>后来发展演变出了一种新的架构模型B/S模型，这种模型是基于http协议进行通信的，客户端是一个存在的容器，通过URI得到服务端的资源内容，然后下载到浏览器中进行渲染，展示出我们所看到的内容。</p>
-<p>这时就出现了前后端的分工，前端主要工作在浏览器中，也就是工作成果最终被展现在浏览器中。浏览器编程，主要需要的技能，CSS，html，javascript三项基本技能。</p>
-<h4 id="什么是前后端分离？"><a href="#什么是前后端分离？" class="headerlink" title="什么是前后端分离？"></a>什么是前后端分离？</h4><p>在针对这个话题，每个人的认识都不一样，大都程序猿认为，基于浏览器渲染的SPA应用通过ajax调用后端接口获取数据，在浏览器层面进行组装渲染。这种划分方式是严格安照物理来划分的。</p>
-<p>如果，按照业务来划分，我们可以分为数据层，和展示层,也就是后端主要从事业务数据处理，前端则主要进行页面展示的处理。</p>
-<p><img src="https://img.alicdn.com/tps/TB1yMyNPVXXXXaPaXXXXXXXXXXX-555-263.png" alt="image"><br>基于以上的分层，就需要我们使用node.js做全栈开发了。<br><img src="https://img.alicdn.com/tps/TB10.2tPVXXXXbUXXXXXXXXXXXX-590-611.png" alt="image"><br>每层之间定义通信的协议。</p>
-<p><img src="https://img.alicdn.com/tps/TB1q2iWPVXXXXX6XVXXXXXXXXXX-800-521.jpg" alt="image"></p>
+        <h4 id="场景1"><a href="#场景1" class="headerlink" title="场景1"></a>场景1</h4><blockquote>
+<p>糟了，我刚把不想要的代码，commit到本地仓库中了，但是还没有做push操作！</p>
+</blockquote>
+<ul>
+<li><p>文件修改未执行git add操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git checkout fileName</span><br><span class="line">$git checkout .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同时对多个文件执行了git add操作，但本次只想提交其中一部分文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git add *</span><br><span class="line">$ git status</span><br><span class="line"># 取消暂存</span><br><span class="line">$ git reset HEAD &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件执行了git add操作，但想撤销对其的修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 取消暂存</span><br><span class="line">git reset HEAD fileName</span><br><span class="line"># 撤销修改</span><br><span class="line">git checkout fileName</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改的文件已被git commit，但想再次修改不再产生新的Commit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 修改最后一次提交</span><br><span class="line">$ git add sample.txt</span><br><span class="line">$ git commit --amend -m&quot;说明&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>已在本地进行了多次git commit操作，现在想撤销到其中某次Commit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset [--hard|soft|mixed|merge|keep] [commit|HEAD]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="场景2"><a href="#场景2" class="headerlink" title="场景2"></a>场景2</h4><blockquote>
+<p>彻底完了，刚线上更新的代码出现问题了，需要还原这次提交的代码！</p>
+</blockquote>
+<p><strong>注意：</strong><br>已进行git push，即已推送到“远程仓库”中。我们将已被提交到“远程仓库”的代码还原操作叫做“回滚”！注意：对远程仓库做回滚操作是有风险的，需提前做好备份和通知其他团队成员！</p>
+<ul>
+<li><p>通过tag发布</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git checkout &lt;tag&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>回到当前的分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git checkout &lt;branch_name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>撤销指定文件到指定版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查看指定文件的历史版本</span><br><span class="line">git log &lt;filename&gt;</span><br><span class="line"># 回滚到指定commitID</span><br><span class="line">git checkout &lt;commitID&gt; &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除最后一次远程提交</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 方式一：使用revert</span><br><span class="line">$git revert HEAD</span><br><span class="line">$git push origin master</span><br><span class="line"></span><br><span class="line"># 方式二：使用reset</span><br><span class="line">$git reset --hard HEAD^</span><br><span class="line">$git push origin master -f</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>二者区别：</strong><br>revert是放弃指定提交的修改，但是会生成一次新的提交，需要填写提交注释，以前的历史记录都在；<br>reset是指将HEAD指针指到指定提交，历史记录中不会出现放弃的提交记录。</p>
 
       
     </div>
@@ -334,8 +362,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/03/聊一聊node-js/" rel="next" title="聊一聊node.js">
-                <i class="fa fa-chevron-left"></i> 聊一聊node.js
+              <a href="/2018/05/03/Linux下命令集/" rel="next" title="Linux下命令集">
+                <i class="fa fa-chevron-left"></i> Linux下命令集
               </a>
             
           </div>
@@ -343,10 +371,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/03/Linux下命令集/" rel="prev" title="Linux下命令集">
-                Linux下命令集 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -460,7 +484,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#分工的发生"><span class="nav-number">1.</span> <span class="nav-text">分工的发生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是前后端分离？"><span class="nav-number">2.</span> <span class="nav-text">什么是前后端分离？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#场景1"><span class="nav-number">1.</span> <span class="nav-text">场景1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#场景2"><span class="nav-number">2.</span> <span class="nav-text">场景2</span></a></li></ol></div>
             
 
           </div>
