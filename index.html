@@ -229,6 +229,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/Git生成多个ssh-keygen/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="暮雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="心之忧矣，如匪浣衣。静言思之，不能奋飞">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/Git生成多个ssh-keygen/" itemprop="url">Git生成多个ssh-keygen</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T22:28:09+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>作为新时代的开发者，大家一般会拥有自己的Github工程。同时公司又提供单独gitlab服务器，所以经常会遇到需要在同一设备下配置多个ssh key的情况，下述会阐述如何进行设置操作：</p>
+</blockquote>
+<h5 id="第一步：生成指定名称的秘钥"><a href="#第一步：生成指定名称的秘钥" class="headerlink" title="第一步：生成指定名称的秘钥"></a>第一步：生成指定名称的秘钥</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen</span><br></pre></td></tr></table></figure>
+<h5 id="第二步：配置config文件"><a href="#第二步：配置config文件" class="headerlink" title="第二步：配置config文件"></a>第二步：配置config文件</h5><p>在~/.ssh文件夹下创建config文件,添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Host 192.168.0.45</span><br><span class="line">IdentityFile ~/.ssh/id_rsa.idss</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Host</td>
+<td>远程主机地址</td>
+</tr>
+<tr>
+<td>IdentityFile</td>
+<td>私钥的文件路径及文件名称</td>
+</tr>
+<tr>
+<td>User</td>
+<td>用户</td>
+</tr>
+<tr>
+<td>Port</td>
+<td>远程主机上连接的端口号</td>
+</tr>
+<tr>
+<td>HostName</td>
+<td>要登录的真实主机名。数字IP地址也是允许的</td>
+</tr>
+</tbody>
+</table>
+<h5 id="第三步：复制新生成的公钥到服务器"><a href="#第三步：复制新生成的公钥到服务器" class="headerlink" title="第三步：复制新生成的公钥到服务器"></a>第三步：复制新生成的公钥到服务器</h5><p>复制公钥到github或相关gitlab,ssh key配置项中</p>
+<h5 id="第四步：修改相关用户配置"><a href="#第四步：修改相关用户配置" class="headerlink" title="第四步：修改相关用户配置"></a>第四步：修改相关用户配置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config user.name &quot;your name&quot;</span><br><span class="line">$ git config user.email &quot;your email&quot;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/git代码回滚/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -461,7 +616,10 @@
             <p>linux命令行作为开发运维一项必备的技能，熟练的使用命令行工具，可以提高日常开发效率和分析排错的能力。此文档主要为平时常使用的一些命令集合整理，方便自己查阅。</p>
 <h4 id="git相关的"><a href="#git相关的" class="headerlink" title="git相关的"></a>git相关的</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 打包增量代码</span><br><span class="line">$git archive --format=tar.gz --output ~/www-csrf.tar.gz HEAD $(git diff 66fa65b6499f860d88a7e69698454deddcbd5db6 a6f8faadf9dfce35edd044b76baba2ad91adc3ec --name-only)</span><br></pre></td></tr></table></figure>
 <h4 id="网络排错"><a href="#网络排错" class="headerlink" title="网络排错"></a>网络排错</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查看端口使用情况</span><br><span class="line">$netstat -tunpl</span><br><span class="line"></span><br><span class="line"># 网络链接状态检查</span><br><span class="line">$nc ip port</span><br></pre></td></tr></table></figure>
-<h4 id="系统处理"><a href="#系统处理" class="headerlink" title="系统处理"></a>系统处理</h4><h4 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h4>
+<h4 id="系统处理"><a href="#系统处理" class="headerlink" title="系统处理"></a>系统处理</h4><h5 id="修改国内源"><a href="#修改国内源" class="headerlink" title="修改国内源"></a>修改国内源</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$cp /etc/apt/sources.list /etc/apt/sources.list_backup</span><br><span class="line">$cat &gt; /etc/apt/sources.list &lt;&lt; EOF</span><br><span class="line">#aliyun</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<h5 id="node-js项目脚本启动文件"><a href="#node-js项目脚本启动文件" class="headerlink" title="node.js项目脚本启动文件"></a>node.js项目脚本启动文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">log_file=&quot;$PWD/auto-update-server.log&quot;</span><br><span class="line"></span><br><span class="line">function log() &#123;</span><br><span class="line">    echo &apos;&apos; 2&gt;&amp;1 | tee -a $log_file</span><br><span class="line">    echo -e &quot;\033[1;36m$1\033[1;0m&quot; 2&gt;&amp;1 | tee -a $log_file</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">run_time=`date &quot;+%Y-%m-%d %H:%M:%S&quot;`</span><br><span class="line">log &quot;===== 脚本启动 ($run_time)=====&quot;</span><br><span class="line"></span><br><span class="line">git checkout .</span><br><span class="line"></span><br><span class="line">log &apos;更新remote&apos;</span><br><span class="line">git remote update 2&gt;&amp;1 | tee -a $log_file</span><br><span class="line">git fetch --tags  2&gt;&amp;1 | tee -a $log_file</span><br><span class="line"></span><br><span class="line">if [ $# -eq 1 ]; then</span><br><span class="line">    log &quot;切换到分支：$1&quot;</span><br><span class="line">    git checkout $1 2&gt;&amp;1 | tee -a $log_file</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">log &apos;获取最新代码&apos;</span><br><span class="line">git pull 2&gt;&amp;1 | tee -a $log_file</span><br><span class="line"></span><br><span class="line">log &apos;安装第三方包&apos;</span><br><span class="line">npm install 2&gt;&amp;1 | tee -a $log_file</span><br><span class="line"></span><br><span class="line">log &quot;关闭内部站服务器&quot;</span><br><span class="line">pm2 delete internal 2&gt;&amp;1 | tee -a $log_file</span><br><span class="line"></span><br><span class="line">log &apos;启动内部站服务器&apos;</span><br><span class="line">pm2 start app/app.js --name internal 2&gt;&amp;1 | tee -a $log_file</span><br><span class="line"></span><br><span class="line">sleep 5</span><br><span class="line">log &apos;当前内部站服务器状态：&apos;</span><br><span class="line">pm2 status 2&gt;&amp;1 | tee -a $log_file</span><br></pre></td></tr></table></figure>
+<h5 id="go语言修改工作目录"><a href="#go语言修改工作目录" class="headerlink" title="go语言修改工作目录"></a>go语言修改工作目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line"></span><br><span class="line">set -e</span><br><span class="line"></span><br><span class="line">if [ ! -f install.sh ]; then</span><br><span class="line">        echo &apos;install must be run within its container folder&apos; 1&gt;&amp;2</span><br><span class="line">        exit 1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">CURDIR=`pwd`</span><br><span class="line">OLDGOPATH=&quot;$GOPATH&quot;</span><br><span class="line">export GOPATH=&quot;$CURDIR&quot;</span><br><span class="line">export GOBIN=</span><br><span class="line"></span><br><span class="line">if [ ! -d log ]; then</span><br><span class="line">        mkdir log</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">gofmt -w -s src</span><br><span class="line"></span><br><span class="line">go install dreamgo</span><br><span class="line"></span><br><span class="line">export GOPATH=&quot;$OLDGOPATH&quot;</span><br><span class="line"></span><br><span class="line">echo &apos;finished&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h4>
           
         
       
@@ -1459,145 +1617,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/前后端分离框架csrf防御/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="暮雨">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="心之忧矣，如匪浣衣。静言思之，不能奋飞">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/27/前后端分离框架csrf防御/" itemprop="url">前后端分离框架csrf防御.md</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T11:34:44+08:00">
-                2018-04-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>前端时间，项目被阿里的安全团队检测，报告存在csrf安全问题，csrf这个攻击方式，以前只是简单的了解，没有深入进入，现在被告知存在这个安全风险，作为已经运行了两三的年的成熟系统，现在真对这个问题，修改，难度还是有些大的。</p>
-<h4 id="项目的基本框架"><a href="#项目的基本框架" class="headerlink" title="项目的基本框架"></a>项目的基本框架</h4><p>项目的web框架使用的是node.js的express框架，功能操作通过提供接口实现，页面在服务端通过ejs模版引擎渲染。<br>前端通过封装的ajax对接口进行调用，完成功能操作。</p>
-<h4 id="业务架构"><a href="#业务架构" class="headerlink" title="业务架构"></a>业务架构</h4><p>项目是一个进行云计算培训的教育平台，分为学习站和管理站，注册登录用户在学习站进行云资源课程的创建和学习。<br>管理站主要针对管理员和课程创作者使用，进行内容录入。</p>
-<h4 id="存在的csrf问题调查"><a href="#存在的csrf问题调查" class="headerlink" title="存在的csrf问题调查"></a>存在的csrf问题调查</h4><p>针对这样的一个运行稳定了的系统，进行csrf防护，难度还是有些大的，csrf的防护最好要在框架层面解决。<br>根据csrf的原理，一个主要的防御策略就是针对有数据增，删，改操作的要统一做随机数验证。<br>根据这点要求，对项目功能接口做调查，发现一些有一些存在数据库操作的接口使用了get请求，如：删除功能等等。<br>针对这个存在的问题，我的策略是将其变为post请求方式。<br>总后对post请求做同一的随机数验证。</p>
-<h4 id="解决问题的思路"><a href="#解决问题的思路" class="headerlink" title="解决问题的思路"></a>解决问题的思路</h4><p>真对以上的get请求，项目代码命名结构等比较规范，我的策略是将get请求改为post请求，大概有五六十个（主要集中在管理站），这个只完成了第一步，然后对post请求在切面做随记数验证。</p>
-<h4 id="实现的思路"><a href="#实现的思路" class="headerlink" title="实现的思路"></a>实现的思路</h4><p>在express框架中存在一个csrf中间件，这个中间件的实现思路</p>
-<ol>
-<li>在服务端生成一个随记数token，将其存储到session中，同时将改参数交给前端</li>
-<li>在请求的时候把这个token加入到请求数据或者头信息中，传给后端</li>
-<li>在服务端拦截验证session和客户端所传的token</li>
-</ol>
-<p>由于项目没有使用session，使用了redis存储服务端的信息，这里考虑使用redis存储这个token。既然数据不存储在服务端，那么就要存储到客户端。也许你已经想到了，通过cookie来实现。</p>
-<ol>
-<li>服务端产生一个随记数token，对该token进行散列算法生成tokenStr字符串。</li>
-<li>将这两个token都设置到cookie中，返回到前端。</li>
-<li>前端发起请求的时候，从cookie中获取token，把这个token加入到请求数据或者头信息中，发送到服务端</li>
-<li>在服务端对 token做同样的散列算法，验证token的合法性<br>通过该思路对post请求进行改造。</li>
-</ol>
-<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p> 实现一个csrf的中间件,在随记数的实现和验证方法等使用了一个csrf的第三方包csrf<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">var Tokens     = require(&apos;csrf&apos;);</span><br><span class="line">exports.csrfCheck = function csrfCheck(req, res, next) &#123;</span><br><span class="line">  var opts = &#123;&#125;;</span><br><span class="line">  var tokens = new Tokens(opts);</span><br><span class="line"></span><br><span class="line">  var ignoreMethods = [&apos;GET&apos;, &apos;HEAD&apos;, &apos;OPTIONS&apos;];</span><br><span class="line">  var curSecret = req.cookies._csrf;</span><br><span class="line">  var curToken = req.headers[&apos;x-csrf-token&apos;] || req.query[&apos;csrfToken&apos;];</span><br><span class="line"></span><br><span class="line">  if (ignoreMethods.indexOf(req.method) == -1) &#123;</span><br><span class="line">    if (!curToken || !curSecret) &#123;</span><br><span class="line">      return next(new _e(&apos;EUserForbidden&apos;, &apos;invalid csrf token&apos;));</span><br><span class="line">    &#125;</span><br><span class="line">    //验证token</span><br><span class="line">    if (!tokens.verify(curSecret, curToken)) &#123;</span><br><span class="line">      return next(new _e(&apos;EUserForbidden&apos;, &apos;invalid csrf token&apos;));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //生成token</span><br><span class="line">  var secret = tokens.secretSync();</span><br><span class="line">   res.cookie(&apos;_csrf&apos;, secret, &#123;</span><br><span class="line">    httpOnly: true</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  // 设置token_key值</span><br><span class="line">  var token = tokens.create(secret);</span><br><span class="line">  res.cookie(&apos;_csrf-token&apos;, token, &#123;</span><br><span class="line">    httpOnly: false</span><br><span class="line">  &#125;)</span><br><span class="line">  return next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p> 在前端ajax的请求中，添加csrf token<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">util.apiPostJSON = function apiPostJSON(options) &#123;</span><br><span class="line">  var fullUrl  = options.query ? toolkit.appendQuery(options.url, options.query) : options.url;</span><br><span class="line">  var postData = options.body ? JSON.stringify(options.body) : undefined;</span><br><span class="line">  var headers = &#123;</span><br><span class="line">    &apos;x-auth-token&apos;: localStorage.getItem(&apos;xAuthToken&apos;) || undefined,</span><br><span class="line">    &apos;x-csrf-token&apos;: $.cookie(&apos;_csrf-token&apos;) || undefined</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  $.ajax(&#123;</span><br><span class="line">    dataType   : &apos;json&apos;,</span><br><span class="line">    contentType: &apos;application/json&apos;,</span><br><span class="line">    type       : &apos;POST&apos;,</span><br><span class="line">    url        : fullUrl,</span><br><span class="line">    headers    : headers,</span><br><span class="line">    data       : postData,</span><br><span class="line">    success: function(j, s, jqXHR) &#123;</span><br><span class="line">      // 默认成功时刷新页面</span><br><span class="line">      if (!options.success) &#123;</span><br><span class="line">        toolkit.reload();</span><br><span class="line">        return;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      if (&apos;function&apos; === typeof options.success) &#123;</span><br><span class="line">        options.success(jqXHR.responseJSON, jqXHR.status);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    error: function(jqXHR) &#123;</span><br><span class="line">      if (&apos;function&apos; === typeof options.error) &#123;</span><br><span class="line">        options.error(jqXHR.responseJSON, jqXHR.status);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    complete: function(jqXHR) &#123;</span><br><span class="line">      if (&apos;function&apos; === typeof options.complete) &#123;</span><br><span class="line">        options.complete(jqXHR.responseJSON, jqXHR.status);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1648,7 +1667,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
