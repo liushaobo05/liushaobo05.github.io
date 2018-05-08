@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="node.js,同步,异步," />
 
 
 
@@ -80,13 +80,14 @@
 
 
 <meta name="description" content="背景项目要上devops，配置中心是整个平台重要的一环，通过它可以自由的配置项目需要的一些配置项。传统服务器部署的方式，通过系统环境变量指定系统的配置项，在程序中通过环境变量指定的地址进行读取。修改配置项，需要远程登录主机，通过vim编辑器修改。现在的改进方案是，将通过etcd作为配置中心，在容器启动时配置环境变量配置etcd对应项目的key的接口，在程序中通过调用接口获取配置信息，将配置中心作为">
+<meta name="keywords" content="node.js,同步,异步">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js 同步获取网络数据">
 <meta property="og:url" content="http://yoursite.com/2018/05/03/node-js-同步获取网络数据/index.html">
 <meta property="og:site_name" content="静言思之，不能奋飞">
 <meta property="og:description" content="背景项目要上devops，配置中心是整个平台重要的一环，通过它可以自由的配置项目需要的一些配置项。传统服务器部署的方式，通过系统环境变量指定系统的配置项，在程序中通过环境变量指定的地址进行读取。修改配置项，需要远程登录主机，通过vim编辑器修改。现在的改进方案是，将通过etcd作为配置中心，在容器启动时配置环境变量配置etcd对应项目的key的接口，在程序中通过调用接口获取配置信息，将配置中心作为">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-03T05:18:45.000Z">
+<meta property="og:updated_time" content="2018-05-08T06:48:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js 同步获取网络数据">
 <meta name="twitter:description" content="背景项目要上devops，配置中心是整个平台重要的一环，通过它可以自由的配置项目需要的一些配置项。传统服务器部署的方式，通过系统环境变量指定系统的配置项，在程序中通过环境变量指定的地址进行读取。修改配置项，需要远程登录主机，通过vim编辑器修改。现在的改进方案是，将通过etcd作为配置中心，在容器启动时配置环境变量配置etcd对应项目的key的接口，在程序中通过调用接口获取配置信息，将配置中心作为">
@@ -349,6 +350,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -404,6 +427,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node-js/" rel="tag"># node.js</a>
+          
+            <a href="/tags/同步/" rel="tag"># 同步</a>
+          
+            <a href="/tags/异步/" rel="tag"># 异步</a>
+          
+        </div>
       
 
       
@@ -513,7 +546,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -524,7 +557,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -535,7 +568,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
