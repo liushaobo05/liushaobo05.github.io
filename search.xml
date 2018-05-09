@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[我的2018年技术成长计划]]></title>
+    <url>%2F2018%2F05%2F09%2F%E6%88%91%E7%9A%842018%E5%B9%B4%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF%E8%AE%A1%E5%88%92%2F</url>
+    <content type="text"><![CDATA[2018年已经过去了四个月，想想自己还没定下一个明确的目标，每天围绕着各种技术，胡乱的看看，感觉这样只会慢慢的变得技术浮躁，对于技术还是要深入进去。想想自己这样漫无目的，就后怕。不管怎么走这一年的技术路，先写下，自己今年的技术成长目标吧。 学会使用go语言 （这个已经完成） 完成三个中型的go项目练手 docker 源码学习 深入学习kubernetes,希望有能力可以取得CKA证书 完成一个完整的node.js前后端项目脚手架 技术文档围绕以上内容定期的做更新，发表自己的技术心的，和学习笔记 有时间再深入下前端]]></content>
+      <categories>
+        <category>个人随笔</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux 下 MySQL 密码强制修改]]></title>
     <url>%2F2018%2F05%2F09%2FLinux-%E4%B8%8B-MySQL-%E5%AF%86%E7%A0%81%E5%BC%BA%E5%88%B6%E4%BF%AE%E6%94%B9%2F</url>
     <content type="text"><![CDATA[一、停掉mysql服务1$service mysqld stop 二、启动mysql，禁止权限验证12#在mysql安装目录的bin目录下执行(&amp;后台执行)$/usr/local/mysql/bin/mysqld_safe --skip-grant-tables &amp; 三、本地登录，更改密码12345678910#本地 localhost登录无需密码$mysql -u root#切换数据库$mysql&gt;use mysql;#更改密码$mysql&gt;update user set password=password(&quot;newpasswd&quot;) where user=&quot;root&quot;;#刷新权限$mysql&gt;flush privileges;#退出$mysql&gt;\q 四、启动mysql 停掉安全模式启动的服务 123456#查询mysql是否启动$ps aux | grep &quot;mysql&quot;#如果发现 有 --skip-grant-tables 类似的进程 找到其 PID kill掉#然后在 kill掉其他进程#PID : 用户名后面的 数字为PID$kill -9 PID 正常启动mysql 12#普通直接安装$service mysqld start 登录测试 12#输入密码$mysql -uroot -p]]></content>
