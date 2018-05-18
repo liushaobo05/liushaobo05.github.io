@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="静言思之，不能奋飞">
-<meta property="og:url" content="http://yoursite.com/categories/版本控制/index.html">
+<meta name="description" content="开发背景学习一门编程语言，最快捷的方式就是学习了基本语法之后，能够实现一个中型的项目，这样对技术的提升有很大的帮助。针对go语言学习，计划以redis的sdk作为入门练习项目。关于实现这个项目，参考node.js的sdk实现，为了降低开发的难度，先实现系统架构图，要求耦合度低，然后逐个功能模块分解实现。借鉴别人好的设计实现思想，拒绝闭门造车。在架构上力求解耦，模块化。 知识准备在开始完成这个项目之">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实现一个redis客户端">
+<meta property="og:url" content="http://yoursite.com/2018/05/16/实现一个redis客户端/index.html">
 <meta property="og:site_name" content="静言思之，不能奋飞">
+<meta property="og:description" content="开发背景学习一门编程语言，最快捷的方式就是学习了基本语法之后，能够实现一个中型的项目，这样对技术的提升有很大的帮助。针对go语言学习，计划以redis的sdk作为入门练习项目。关于实现这个项目，参考node.js的sdk实现，为了降低开发的难度，先实现系统架构图，要求耦合度低，然后逐个功能模块分解实现。借鉴别人好的设计实现思想，拒绝闭门造车。在架构上力求解耦，模块化。 知识准备在开始完成这个项目之">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-17T06:47:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="静言思之，不能奋飞">
+<meta name="twitter:title" content="实现一个redis客户端">
+<meta name="twitter:description" content="开发背景学习一门编程语言，最快捷的方式就是学习了基本语法之后，能够实现一个中型的项目，这样对技术的提升有很大的帮助。针对go语言学习，计划以redis的sdk作为入门练习项目。关于实现这个项目，参考node.js的sdk实现，为了降低开发的难度，先实现系统架构图，要求耦合度低，然后逐个功能模块分解实现。借鉴别人好的设计实现思想，拒绝闭门造车。在架构上力求解耦，模块化。 知识准备在开始完成这个项目之">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/版本控制/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/16/实现一个redis客户端/"/>
 
 
 
 
 
-  <title>分类: 版本控制 | 静言思之，不能奋飞</title>
+  <title>实现一个redis客户端 | 静言思之，不能奋飞</title>
   
 
 
@@ -143,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <!----------- add Fork me on Github ------------>
@@ -287,139 +291,201 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>版本控制<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/16/实现一个redis客户端/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="暮雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静言思之，不能奋飞">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/05/09/Git-Flow/" itemprop="url">
-              
-                <span itemprop="name">Git Flow</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">实现一个redis客户端</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-09T13:11:31+08:00"
-              content="2018-05-09" >
-          05-09
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T21:37:18+08:00">
+                2018-05-16
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+              <span id="busuanzi_container_page_pv">  |  阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/16/实现一个redis客户端/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/16/实现一个redis客户端/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/04/git常用命令清单/" itemprop="url">
-              
-                <span itemprop="name">git常用命令清单</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-04T13:04:33+08:00"
-              content="2018-05-04" >
-          05-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/03/Git生成多个ssh-keygen/" itemprop="url">
-              
-                <span itemprop="name">Git生成多个ssh-keygen</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-03T22:28:09+08:00"
-              content="2018-05-03" >
-          05-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/03/git代码回滚/" itemprop="url">
-              
-                <span itemprop="name">git代码回滚</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-03T18:30:53+08:00"
-              content="2018-05-03" >
-          05-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+        <h4 id="开发背景"><a href="#开发背景" class="headerlink" title="开发背景"></a>开发背景</h4><p>学习一门编程语言，最快捷的方式就是学习了基本语法之后，能够实现一个中型的项目，这样对技术的提升有很大的帮助。针对go语言学习，计划以redis的sdk作为入门练习项目。关于实现这个项目，参考node.js的sdk实现，为了降低开发的难度，先实现系统架构图，要求耦合度低，然后逐个功能模块分解实现。借鉴别人好的设计实现思想，拒绝闭门造车。在架构上力求解耦，模块化。</p>
+<h4 id="知识准备"><a href="#知识准备" class="headerlink" title="知识准备"></a>知识准备</h4><p>在开始完成这个项目之前，需要先了解两方面知识，1. redis通信协议 2. 连接池的实现,在这个项目中，将使用这两个概念来完成该项目。</p>
+<h5 id="理解redis通信协议"><a href="#理解redis通信协议" class="headerlink" title="理解redis通信协议"></a>理解redis通信协议</h5><p>协议是通信的机制的一种规范，通过这种规范，可以被程序高效的识别。那么redis客户端和服务端的通信协议是怎么规定的，知道了这个协议规范，我们就可以编写程序解析出结果。</p>
+<ul>
+<li>请求协议<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">*&lt;参数数量&gt; CR LF</span><br><span class="line">$&lt;参数 1 的字节数量&gt; CR LF</span><br><span class="line">&lt;参数 1 的数据&gt; CR LF</span><br><span class="line">...</span><br><span class="line">$&lt;参数 N 的字节数量&gt; CR LF</span><br><span class="line">&lt;参数 N 的数据&gt; CR LF</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line">*3</span><br><span class="line">$3</span><br><span class="line">SET</span><br><span class="line">$5</span><br><span class="line">mykey</span><br><span class="line">$7</span><br><span class="line">myvalue</span><br><span class="line"></span><br><span class="line">&quot;*3\r\n$3\r\nSET\r\n$5\r\nmykey\r\n$7\r\nmyvalue\r\n&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>以上是客户端，发送请求协议的规范，它是建立在tcp协议之上的。</p>
+<ul>
+<li>回复协议</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>作用</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>状态回复</td>
+<td>（status reply）的第一个字节是 “+”</td>
+</tr>
+<tr>
+<td>错误回复</td>
+<td>（error reply）的第一个字节是 “-“</td>
+</tr>
+<tr>
+<td>整数回复</td>
+<td>（integer reply）的第一个字节是 “:”</td>
+</tr>
+<tr>
+<td>批量回复</td>
+<td>（bulk reply）的第一个字节是 “$”</td>
+</tr>
+<tr>
+<td>多条批量回复</td>
+<td>（multi bulk reply）的第一个字节是 “*”</td>
+</tr>
+</tbody>
+</table>
+<p>以上对redis的协议做了简单的说明，将以上内容转化为程序语言后，就实现了redis功能的核心模块。</p>
+<h5 id="连接池的实现"><a href="#连接池的实现" class="headerlink" title="连接池的实现"></a>连接池的实现</h5>
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/09/Linux-下-MySQL-密码强制修改/" rel="next" title="Linux 下 MySQL 密码强制修改">
+                <i class="fa fa-chevron-left"></i> Linux 下 MySQL 密码强制修改
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/18/JSON-模式验证/" rel="prev" title="JSON 模式验证">
+                JSON 模式验证 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -427,6 +493,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -447,8 +527,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -508,6 +597,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#开发背景"><span class="nav-number">1.</span> <span class="nav-text">开发背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#知识准备"><span class="nav-number">2.</span> <span class="nav-text">知识准备</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#理解redis通信协议"><span class="nav-number">2.1.</span> <span class="nav-text">理解redis通信协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#连接池的实现"><span class="nav-number">2.2.</span> <span class="nav-text">连接池的实现</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -641,6 +746,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -658,6 +767,18 @@
       <script id="dsq-count-scr" src="https://aaa.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/05/16/实现一个redis客户端/';
+          this.page.identifier = '2018/05/16/实现一个redis客户端/';
+          this.page.title = '实现一个redis客户端';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://aaa.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
