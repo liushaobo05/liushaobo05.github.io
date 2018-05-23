@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="k8s," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="静言思之，不能奋飞">
-<meta property="og:url" content="http://yoursite.com/archives/2018/page/3/index.html">
+<meta name="description" content="从helloworld入手学习一项IT新技术，都会从helloworld起步，那么k8s的helloworld是什么样子呢？运行一个hello world首先要安装针对这项技术的IT环境，在本机安装minikube的单点集群实验。 我们将按照以下几步进行展开  创建一个集群 部署一个应用 创建service，外部访问 伸缩应用副本 版本回退  集群管理通过minikube安装的单节点的集群，首先通">
+<meta name="keywords" content="k8s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kubernetes学习笔记1">
+<meta property="og:url" content="http://yoursite.com/2018/05/22/kubernetes学习笔记1/index.html">
 <meta property="og:site_name" content="静言思之，不能奋飞">
+<meta property="og:description" content="从helloworld入手学习一项IT新技术，都会从helloworld起步，那么k8s的helloworld是什么样子呢？运行一个hello world首先要安装针对这项技术的IT环境，在本机安装minikube的单点集群实验。 我们将按照以下几步进行展开  创建一个集群 部署一个应用 创建service，外部访问 伸缩应用副本 版本回退  集群管理通过minikube安装的单节点的集群，首先通">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-23T02:23:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="静言思之，不能奋飞">
+<meta name="twitter:title" content="kubernetes学习笔记1">
+<meta name="twitter:description" content="从helloworld入手学习一项IT新技术，都会从helloworld起步，那么k8s的helloworld是什么样子呢？运行一个hello world首先要安装针对这项技术的IT环境，在本机安装minikube的单点集群实验。 我们将按照以下几步进行展开  创建一个集群 部署一个应用 创建service，外部访问 伸缩应用副本 版本回退  集群管理通过minikube安装的单节点的集群，首先通">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/page/3/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/22/kubernetes学习笔记1/"/>
 
 
 
 
 
-  <title>归档 | 静言思之，不能奋飞</title>
+  <title>kubernetes学习笔记1 | 静言思之，不能奋飞</title>
   
 
 
@@ -143,7 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <!----------- add Fork me on Github ------------>
@@ -287,152 +292,197 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/kubernetes学习笔记1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="暮雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静言思之，不能奋飞">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">kubernetes学习笔记1</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T20:47:54+08:00">
+                2018-05-22
+              </time>
+            
+
+            
+
+            
+              <span id="busuanzi_container_page_pv">  |  阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 23 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/kubernetes/" itemprop="url" rel="index">
+                    <span itemprop="name">kubernetes</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/22/kubernetes学习笔记1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/22/kubernetes学习笔记1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/27/gitlab实现持续集成/" itemprop="url">
-              
-                <span itemprop="name">gitlab实现持续集成</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-27T16:13:29+08:00"
-              content="2018-04-27" >
-          04-27
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/27/前后端分离框架csrf防御/" itemprop="url">
-              
-                <span itemprop="name">前后端分离框架csrf防御.md</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-27T11:34:44+08:00"
-              content="2018-04-27" >
-          04-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/23/go学习笔记1－知识点导图/" itemprop="url">
-              
-                <span itemprop="name">go学习笔记1－知识点导图</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-23T21:58:31+08:00"
-              content="2018-04-23" >
-          04-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h4 id="从helloworld入手"><a href="#从helloworld入手" class="headerlink" title="从helloworld入手"></a>从helloworld入手</h4><p>学习一项IT新技术，都会从helloworld起步，那么k8s的helloworld是什么样子呢？运行一个hello world首先要安装针对这项技术的IT环境，在本机安装minikube的单点集群实验。</p>
+<p>我们将按照以下几步进行展开</p>
+<ol>
+<li>创建一个集群</li>
+<li>部署一个应用</li>
+<li>创建service，外部访问</li>
+<li>伸缩应用副本</li>
+<li>版本回退</li>
+</ol>
+<h4 id="集群管理"><a href="#集群管理" class="headerlink" title="集群管理"></a>集群管理</h4><p>通过minikube安装的单节点的集群，首先通过minikube 创建一个集群<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">$minikube version</span><br><span class="line">minikube version: v0.23.0</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line">  minikube [command]</span><br><span class="line"></span><br><span class="line">Available Commands:</span><br><span class="line">  addons           Modify minikube&apos;s kubernetes addons</span><br><span class="line">  completion       Outputs minikube shell completion for the given shell (bash)</span><br><span class="line">  config           Modify minikube config</span><br><span class="line">  dashboard        Opens/displays the kubernetes dashboard URL for your local cluster</span><br><span class="line">  delete           Deletes a local kubernetes cluster</span><br><span class="line">  docker-env       Sets up docker env variables; similar to &apos;$(docker-machine env)&apos;</span><br><span class="line">  get-k8s-versions Gets the list of available kubernetes versions available for minikube</span><br><span class="line">  ip               Retrieves the IP address of the running cluster</span><br><span class="line">  logs             Gets the logs of the running localkube instance, used for debugging minikube, not user code</span><br><span class="line">  mount            Mounts the specified directory into minikube</span><br><span class="line">  profile          Profile sets the current minikube profile</span><br><span class="line">  service          Gets the kubernetes URL(s) for the specified service in your local cluster</span><br><span class="line">  ssh              Log into or run a command on a machine with SSH; similar to &apos;docker-machine ssh&apos;</span><br><span class="line">  ssh-key          Retrieve the ssh identity key path of the specified cluster</span><br><span class="line">  start            Starts a local kubernetes cluster</span><br><span class="line">  status           Gets the status of a local kubernetes cluster</span><br><span class="line">  stop             Stops a running local kubernetes cluster</span><br><span class="line">  update-context   Verify the IP address of the running cluster in kubeconfig.</span><br><span class="line">  version          Print the version of minikube</span><br><span class="line"></span><br><span class="line"># 1. 启动一个集群</span><br><span class="line">$minikube start</span><br><span class="line">Starting local Kubernetes v1.8.0 cluster...</span><br><span class="line">Starting VM...</span><br><span class="line">Getting VM IP address...</span><br><span class="line">Moving files into cluster...</span><br><span class="line">Setting up certs...</span><br><span class="line">Connecting to cluster...</span><br><span class="line">Setting up kubeconfig...</span><br><span class="line">Starting cluster components...</span><br><span class="line">Kubectl is now configured to use the cluster.</span><br><span class="line"></span><br><span class="line"># 2. 获取集群版本</span><br><span class="line">$kubectl version</span><br><span class="line">Client Version: version.Info&#123;Major:&quot;1&quot;, Minor:&quot;8&quot;, GitVersion:&quot;v1.8.4&quot;, GitCommit:&quot;9befc2b8928a9426501d3bf62f72849d5cbcd5a3&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2017-11-20T19:11:22Z&quot;, GoVersion:&quot;go1.9.2&quot;, Compiler:&quot;gc&quot;, Platform:&quot;darwin/amd64&quot;&#125;</span><br><span class="line">Server Version: version.Info&#123;Major:&quot;1&quot;, Minor:&quot;8&quot;, GitVersion:&quot;v1.8.0&quot;, GitCommit:&quot;0b9efaeb34a2fc51ff8e4d34ad9bc6375459c4a4&quot;, GitTreeState:&quot;dirty&quot;, BuildDate:&quot;2017-10-17T15:09:55Z&quot;, GoVersion:&quot;go1.8.3&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;&#125;</span><br><span class="line"></span><br><span class="line"># 3. 查看当前集群信息</span><br><span class="line">$kubectl cluster-info</span><br><span class="line"></span><br><span class="line"># 3. 获取节点信息</span><br><span class="line">$kubectl get nodes</span><br></pre></td></tr></table></figure></p>
+<h4 id="应用部署"><a href="#应用部署" class="headerlink" title="应用部署"></a>应用部署</h4><p>部署一个nigix容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">$kubectl run my-nginx --image=nginx --port=80</span><br><span class="line"></span><br><span class="line"># 2. 查看deployment</span><br><span class="line">$kubectl get deployments</span><br><span class="line"></span><br><span class="line"># 3. 设置集群内部网路代理</span><br><span class="line">$kubectl proxy</span><br><span class="line"></span><br><span class="line"># 4. 查看代理信息</span><br><span class="line">$curl http://localhost:8001/version</span><br><span class="line">&#123;</span><br><span class="line">  &quot;major&quot;: &quot;1&quot;,</span><br><span class="line">  &quot;minor&quot;: &quot;8&quot;,</span><br><span class="line">  &quot;gitVersion&quot;: &quot;v1.8.0&quot;,</span><br><span class="line">  &quot;gitCommit&quot;: &quot;0b9efaeb34a2fc51ff8e4d34ad9bc6375459c4a4&quot;,</span><br><span class="line">  &quot;gitTreeState&quot;: &quot;dirty&quot;,</span><br><span class="line">  &quot;buildDate&quot;: &quot;2017-10-17T15:09:55Z&quot;,</span><br><span class="line">  &quot;goVersion&quot;: &quot;go1.8.3&quot;,</span><br><span class="line">  &quot;compiler&quot;: &quot;gc&quot;,</span><br><span class="line">  &quot;platform&quot;: &quot;linux/amd64&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 5. pod name</span><br><span class="line">$export POD_NAME=$(kubectl get pods -o go-template --template &apos;&#123;&#123;range .items&#125;&#125;&#123;&#123;.metadata.name&#125;&#125;&#123;&#123;&quot;\n&quot;&#125;&#125;&#123;&#123;end&#125;&#125;&apos;)</span><br><span class="line">echo Name of the Pod: $POD_NAME</span><br><span class="line"></span><br><span class="line"># 6. 访问请求</span><br><span class="line">$curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/</span><br><span class="line"></span><br><span class="line"># 7. 进入容器</span><br><span class="line">$kubectl exec -ti $POD_NAME bash</span><br></pre></td></tr></table></figure></p>
+<h4 id="创建service"><a href="#创建service" class="headerlink" title="创建service"></a>创建service</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 创建service</span><br><span class="line">$kubectl expose deployment my-nginx --type=&quot;NodePort&quot; --port 80</span><br><span class="line"></span><br><span class="line"># 设置环境变量</span><br><span class="line">$export NODE_PORT=$(kubectl get services/kubernetes-bootcamp -o go-template=&apos;&#123;&#123;(index .spec.ports 0).nodePort&#125;&#125;&apos;)</span><br><span class="line">$echo NODE_PORT=$NODE_PORT</span><br><span class="line"></span><br><span class="line">＃ 测试</span><br><span class="line">$curl $(minikube ip):$NODE_PORT</span><br></pre></td></tr></table></figure>
+<h4 id="伸缩应用"><a href="#伸缩应用" class="headerlink" title="伸缩应用"></a>伸缩应用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 伸缩应用</span><br><span class="line">$kubectl scale deployments/my-nginx --replicas=4</span><br><span class="line"></span><br><span class="line"># 查看节点</span><br><span class="line">$kubectl get pods -o wide</span><br><span class="line"></span><br><span class="line"># kubectl scale deployments/my-nginx --replicas=2</span><br></pre></td></tr></table></figure>
+<h4 id="回滚应用"><a href="#回滚应用" class="headerlink" title="回滚应用"></a>回滚应用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl rollout undo deployments/my-nginx</span><br></pre></td></tr></table></figure>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/k8s/" rel="tag"># k8s</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/18/JSON-模式验证/" rel="next" title="JSON 模式验证">
+                <i class="fa fa-chevron-left"></i> JSON 模式验证
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2018/">1</a><a class="page-number" href="/archives/2018/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -440,6 +490,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -460,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -521,6 +594,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#从helloworld入手"><span class="nav-number">1.</span> <span class="nav-text">从helloworld入手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集群管理"><span class="nav-number">2.</span> <span class="nav-text">集群管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用部署"><span class="nav-number">3.</span> <span class="nav-text">应用部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建service"><span class="nav-number">4.</span> <span class="nav-text">创建service</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伸缩应用"><span class="nav-number">5.</span> <span class="nav-text">伸缩应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回滚应用"><span class="nav-number">6.</span> <span class="nav-text">回滚应用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -654,6 +743,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -671,6 +764,18 @@
       <script id="dsq-count-scr" src="https://aaa.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/05/22/kubernetes学习笔记1/';
+          this.page.identifier = '2018/05/22/kubernetes学习笔记1/';
+          this.page.title = 'kubernetes学习笔记1';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://aaa.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
