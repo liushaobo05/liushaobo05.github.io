@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mac下mysql的安装和使用]]></title>
+    <url>%2F2018%2F07%2F03%2Fmac%E4%B8%8Bmysql%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[背景在日常的开发中，很难离的开mysql数据库的应用，随着云计算的发展，越来越多的项目开始在生产测试环境使用阿里云的rds，其它云也有类似的替代产品。但是在本地的开发环境中，我们还是需要安装一个mysql的数据服务，越来越喜欢mac下的开发体验，所以就以mac环境下的使用为例进行展开。 命令行mysql安装12345$brew install mysql$ unset TMPDIR$ mkdir /usr/local/var$ mysql_install_db --verbose --user=`whoami` --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/var/mysql --tmpdir=/tmp 使用12345678# 启动$ mysql.server start＃ 停止$ mysql.server stop＃ 登陆mysql$ mysql -uroot Note: 默认情况下，MySQL 用户 root 没有密码，这对本地开发没有关系，但如果你希望修改密码1$ mysqladmin -u root password &apos;new-password&apos; 卸载mysql12345678910sudo rm -rf /usr/local/mysql*sudo rm -rf /Library/StartupItems/MySQLCOMsudo rm -rf /Library/PreferencePanes/My*sudo rm -rf /Library/Receipts/mysql*sudo rm -rf /Library/Receipts/MySQL*sudo rm -rf /var/db/receipts/com.mysql.*vi /Library/Receipts/InstallHistory.plist # 进入搜素 mysql , “shif+:” 输入mysqlfind / -name mysql -print 2&gt; /dev/nullsudo find / | grep -i mysql 遇到的一些问题使用mysql.server stop时发现停止服务后，服务进程又重新启动了，这是因为在Mac中设置了自启动在Mac中开机自启动的服务是通过launchctl管理的，通过服务的plist文件进行添加12cd /usr/local/Cellar/mysql/5.6.27launchctl unload -w ./homebrew.mxcl.mysql.plist 通过以上命令就可以取消自启动设置 通过docker使用mysql 启动mysql容器 12$docker run --name cbb-mysql1 -p 3307:3306 -v /home/mysql_data:/var/lib/mysql --restart=always -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.6b344e219ff03a92d65f75f74ab5b227838cce8619cbe695ccd1b6889f9a3d174 创建新用户 12mysql&gt; use mysql;mysql&gt; create USER &apos;dev&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;; 授权 1GRANT privileges ON databasename.tablename TO &apos;username&apos;@&apos;host&apos; 容器间链接 1$docker run -d -p 80:8096 -v /home/gtdata:/gtdata --restart=always --name web01 --link=cbb-mysql1:mydb java_web:1.0 /root/run.sh]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[k8s学习笔记-起步应用]]></title>
     <url>%2F2018%2F06%2F29%2Fk8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B5%B7%E6%AD%A5%E5%BA%94%E7%94%A8%2F</url>
     <content type="text"><![CDATA[k8s是谷歌开源了容器编排和管理工具，现在在云计算领域占据着重要的地位。新技术的出现，都会带来生产力的巨大提高，那么k8s带来了怎样的一个便利，通过下边的例子，进行展开。 1. 启动minikube通过minikube启动一个集群1$minikube start 注意此处需要科学上学环境,命令行中设置，参考之前的文章 2. 查看集群状态1kubectl cluster-info 3. 创建deployment1kubectl run my-web-server --image=nginx --port=80 4. 创建service1kubectl expose deployment my-web-server --port 80 --type=NodePort 5. 访问测试123export PORT=$(kubectl get svc first-deployment -o go-template=&apos;&#123;&#123;range.spec.ports&#125;&#125;&#123;&#123;if .nodePort&#125;&#125;&#123;&#123;.nodePort&#125;&#125;&#123;&#123;&quot;\n&quot;&#125;&#125;&#123;&#123;end&#125;&#125;&#123;&#123;end&#125;&#125;&apos;)echo &quot;Accessing host01:$PORT&quot;curl host01:$PORT]]></content>
